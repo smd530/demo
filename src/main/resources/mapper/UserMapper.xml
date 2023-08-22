@@ -3,22 +3,22 @@
 <mapper namespace="com.example.demo.mapper.UserMapper">
 
     <sql id="FIELDS">
-        id, username, password, create_time
+        id, name, password, create_time
     </sql>
 
     <insert id="insert" parameterType="UserDO" useGeneratedKeys="true" keyProperty="id">
         INSERT INTO users (
-          username, password, create_time
+          name, password, create_time
         ) VALUES (
-          #{username}, #{password}, #{createTime}
+          #{name}, #{password}, #{createTime}
         )
     </insert>
 
     <update id="updateById" parameterType="UserDO">
         UPDATE users
         <set>
-            <if test="username != null">
-                , username = #{username}
+            <if test="name != null">
+                , name = #{name}
             </if>
             <if test="password != null">
                 , password = #{password}
@@ -39,11 +39,11 @@
         WHERE id = #{id}
     </select>
 
-    <select id="selectByUsername" parameterType="String" resultType="UserDO">
+    <select id="selectByname" parameterType="String" resultType="UserDO">
         SELECT
             <include refid="FIELDS" />
         FROM users
-        WHERE username = #{username}
+        WHERE name = #{name}
         LIMIT 1
     </select>
 

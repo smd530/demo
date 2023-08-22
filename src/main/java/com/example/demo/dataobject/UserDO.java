@@ -58,7 +58,7 @@ public class UserDO {
     }
 
     public UserDO setCreateTime(Date createTime) {
-        this.createTime,my = createTime;
+        this.createTime = createTime;
         return this;
     }
 }
