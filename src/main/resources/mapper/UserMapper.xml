@@ -27,10 +27,7 @@
         WHERE id = #{id}
     </update>
 
-    <delete id="deleteById" parameterType="Integer">
-        DELETE FROM users
-        WHERE id = #{id}
-    </delete>
+
 
     <select id="selectById" parameterType="Integer" resultType="UserDO">
         SELECT

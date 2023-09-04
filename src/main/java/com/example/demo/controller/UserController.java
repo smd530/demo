@@ -1,11 +1,11 @@
 package com.example.demo.controller;
 
+import com.example.demo.dto.UserDTO;
+import com.example.demo.service.UserService;
 import com.example.demo.vo.UserVO;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
+import javax.annotation.Resource;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -16,6 +16,9 @@ import java.util.List;
 @RestController
 @RequestMapping("/users")
 public class UserController {
+
+    @Resource
+    private UserService userService;
 
     @GetMapping("/list")
     public List<UserVO> list() {
@@ -42,5 +45,11 @@ public class UserController {
         user.setId(id);
         user.setName("卡卡罗特");
         return user;
+    }
+
+    @PostMapping("/update")
+    public String update(@RequestBody UserDTO userDTO) {
+        userService.update(userDTO);
+        return "更新成功";
     }
 }

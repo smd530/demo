@@ -1,24 +1,23 @@
-package com.example.demo.dataobject;
+package com.example.demo.dto;
 
 import lombok.Data;
 
 import java.util.Date;
 
 /**
+ * User Data Transfer Object
  * @author shanmingda
  */
 @Data
-public class UserDO {
+public class UserDTO {
 
-    /**
-     * id
-     */
     private Integer id;
 
     /**
      * 名字
      */
     private String name;
+
     /**
      * 密码（明文）
      */
@@ -28,5 +27,4 @@ public class UserDO {
      * 创建时间
      */
     private Date createTime;
-
 }

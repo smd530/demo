@@ -1,5 +1,6 @@
 package com.example.demo.vo;
 
+import java.util.Date;
 import java.util.Objects;
 
 /**
@@ -7,20 +8,22 @@ import java.util.Objects;
  */
 public class UserVO {
 
-    /**
-     * id
-     */
     private Integer id;
-
-    /**
-     * 年龄
-     */
-    private Integer age;
 
     /**
      * 名字
      */
     private String name;
+
+    /**
+     * 密码（明文）
+     */
+    private String password;
+
+    /**
+     * 创建时间
+     */
+    private Date createTime;
 
     public Integer getId() {
         return id;
@@ -28,14 +31,6 @@ public class UserVO {
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public Integer getAge() {
-        return age;
-    }
-
-    public void setAge(Integer age) {
-        this.age = age;
     }
 
     public String getName() {
@@ -46,24 +41,39 @@ public class UserVO {
         this.name = name;
     }
 
-    public UserVO(Integer id, Integer age, String name) {
-        this.id = id;
-        this.age = age;
-        this.name = name;
+    public String getPassword() {
+        return password;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    public Date getCreateTime() {
+        return createTime;
+    }
+
+    public void setCreateTime(Date createTime) {
+        this.createTime = createTime;
     }
 
     public UserVO() {
     }
 
-    public UserVO(String name) {
+    public UserVO(Integer id, String name, String password, Date createTime) {
+        this.id = id;
         this.name = name;
+        this.password = password;
+        this.createTime = createTime;
     }
 
     @Override
     public String toString() {
         return "UserVO{" +
-                "age=" + age +
+                "id=" + id +
                 ", name='" + name + '\'' +
+                ", password='" + password + '\'' +
+                ", createTime=" + createTime +
                 '}';
     }
 }

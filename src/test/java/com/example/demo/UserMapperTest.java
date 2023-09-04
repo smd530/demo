@@ -20,8 +20,8 @@ public class UserMapperTest {
 
     @Test
     public void testInsert() {
-        UserDO user = new UserDO().setName(UUID.randomUUID().toString())
-                .setPassword("1234567890").setCreateTime(new Date());
+        UserDO user = new UserDO();
+        user.setName("贝吉塔");
         userMapper.insert(user);
     }
 
